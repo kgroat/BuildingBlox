@@ -1,0 +1,24 @@
+<html>
+    <head>
+        <link href="/dist/angular.blox.css" rel="stylesheet" type="text/css" />
+        <link href="/dist/bower_components/bootstrap/dist/css/bootstrap.css" rel="stylesheet" type="text/css" />
+        <script src="/dist/bower_components/interact/interact.js"></script>
+        <script src="/dist/bower_components/angular/angular.js"></script>
+        <script src="/dist/angular.blox.directives.js"></script>
+        <script src="testApp.js"></script>
+    </head>
+    <body ng-app="testApp">
+        <div ng-controller="testController">
+            <div style="padding: 20px">
+                <div class="row">
+                    <draggable-list class="col-xs-6 col-sm-6 col-md-6 col-lg-6" ng-model="testModel"></draggable-list>
+                    <draggable-list class="col-xs-6 col-sm-6 col-md-6 col-lg-6" ng-model="testModel2"></draggable-list>
+                </div>
+                <div class="row">
+                    <draggable-list class="col-xs-6 col-sm-6 col-md-6 col-lg-6" ng-model="testModel3"></draggable-list>
+                    <draggable-list class="col-xs-6 col-sm-6 col-md-6 col-lg-6" ng-model="testModel4"></draggable-list>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

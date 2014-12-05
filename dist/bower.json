@@ -1,0 +1,28 @@
+{
+  "name": "BuildingBlox.Directives",
+  "version": "0.0.0",
+  "authors": [
+    "thegrtman <kgroat@live.com>"
+  ],
+  "description": "Angular module containing useful directives",
+  "main": "angular.blox.directives.js",
+  "keywords": [
+    "Angular"
+  ],
+  "license": "MIT",
+  "private": false,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "moduleType": [
+    "amd"
+  ],
+  "devDependencies": {
+    "angular": "~1.2.25",
+    "interact": "~1.0.25"
+  }
+}

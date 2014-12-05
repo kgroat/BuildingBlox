@@ -25,6 +25,9 @@ build/Release
 node_modules
 bower_components
 
+# Build temporary directory
+tmp
+
 # Users Environment Variables
 .lock-wscript
 .idea

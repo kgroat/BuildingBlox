@@ -20,7 +20,6 @@ app.directive('draggableList', ['abbGenerators', 'abbArrayHelpers', function (ge
                 getListNameProperty = function () { return $scope.listNameProperty || 'name'; },
                 getListProperty = function () { return $scope.listProperty || 'list'; },
                 getList = function () { return $scope.model[getListProperty()]; },
-                newItem,
                 getIndexOfId = function (id, defaultValue) {
                     return arrayHelpers.firstReturn(getList(), function (item, index) {
                         if (item[getIdProperty()] === id) {
@@ -28,7 +27,8 @@ app.directive('draggableList', ['abbGenerators', 'abbArrayHelpers', function (ge
                         }
                     }, defaultValue);
                 },
-                addBeforeList;
+                addBeforeList = {},
+                newItem;
 
             $scope.getIdProperty = getIdProperty;
             $scope.getDisplayProperty = getDisplayProperty;
@@ -73,17 +73,16 @@ app.directive('draggableList', ['abbGenerators', 'abbArrayHelpers', function (ge
                 addBeforeList = {};
             };
 
-            addBeforeList = {};
-
             $scope.createAddBefore = function (id) {
                 var defaultValue = -1,
                     idIndex;
                 if (!addBeforeList['_id_' + id]) {
                     idIndex = getIndexOfId(id, defaultValue);
                     addBeforeList['_id_' + id] = function (ev) {
-                        var item = ev.draggable.getItem();
+                        newItem = ev.draggable.getItem();
                         ev.draggable.remove();
-                        getList().splice(idIndex, 0, item);
+                        getList().splice(idIndex, 0, newItem);
+                        addBeforeList = {};
                     };
                 }
                 return addBeforeList['_id_' + id];

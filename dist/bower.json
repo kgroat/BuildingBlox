@@ -1,6 +1,6 @@
 {
   "name": "BuildingBlox.Directives",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "authors": [
     "thegrtman <kgroat@live.com>"
   ],
@@ -21,8 +21,11 @@
   "moduleType": [
     "amd"
   ],
-  "devDependencies": {
+  "dependencies": {
     "angular": "~1.2.25",
     "interact": "~1.0.25"
+  },
+  "devDependencies": {
+    "bootstrap": "~3.3.1"
   }
 }

@@ -2,7 +2,7 @@
 An angular boilerplate module
 ------------
 
-*BuildingBlox.Directives* contains several useful AngularJS directives.
+**BuildingBlox.Directives** contains several useful AngularJS directives.
 
 Currently, the module contains a framework for drag-and-drop functionality.
 It can be used like so:
@@ -43,10 +43,10 @@ What the HTML might look like for the above list object:
 </div>
 ```
 
-The directive uses the *id-property* attribute to determine the unique identifier for each list item,
-*display-property* for what text to show for each list item,
-*list-name-property* for what property on the list object should be used as the heading,
-and *list-property* for what the property on the list object actually refers to the list.
+The directive uses the `id-property` attribute to determine the unique identifier for each list item,
+`display-property` for what text to show for each list item,
+`list-name-property` for what property on the list object should be used as the heading,
+and `list-property` for what the property on the list object actually refers to the list.
 Each of these attributes has a default value, which are the same as those used in the example.
 
 Dependencies

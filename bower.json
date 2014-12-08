@@ -8,13 +8,13 @@
   "main": "angular.blox.directives.js",
   "keywords": [
     "Angular"
+  ],
+  "license": "MIT",
   "private": false,
   "ignore": [
     "**/.*",
     "node_modules",
     "dist/bower_components",
-  ],
-  "license": "MIT",
     "src",
     "testServer",
     "gulpfile.js",

@@ -1,7 +1,7 @@
 /*global angular, require, module, interact*/
 /*jslint browser: true*/
 
-var app = require('../angular.blox.directives.js');
+var app = require('../buildingBlox.directives.js');
 app.directive('hiddenInput', ['abbArrayHelpers', function (arrayHelpers) {
     'use strict';
     return {

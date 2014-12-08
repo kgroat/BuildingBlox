@@ -1,7 +1,7 @@
 /*global angular, require, module*/
 /*jslint browser: true*/
 
-var app = require('../angular.blox.directives.js');
+var app = require('../buildingBlox.directives.js');
 app.directive('listItem', [function () {
     'use strict';
     return {

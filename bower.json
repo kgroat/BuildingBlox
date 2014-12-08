@@ -8,18 +8,18 @@
   "main": "angular.blox.directives.js",
   "keywords": [
     "Angular"
-  ],
-  "license": "MIT",
   "private": false,
   "ignore": [
     "**/.*",
     "node_modules",
     "dist/bower_components",
+  ],
+  "license": "MIT",
     "src",
     "testServer",
     "gulpfile.js",
     "Angular_Building_Blox_Logo_SM.png",
-    "package.json",
+    "*.json",
     "test"
   ],
   "moduleType": [

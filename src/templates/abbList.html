@@ -1,0 +1,6 @@
+<div class="panel panel-primary">
+    <div class="panel-heading"><input class="hidden-input" ng-model="model[getListNameProperty()]" /></div>
+    <div class="list-group-item" ng-repeat="(index, item) in getList() track by item[getIdProperty()]" ng-if="index != getListNameProperty()">
+        <list-item ng-model="item" display-property="{{getDisplayProperty()}}"></list-item>
+    </div>
+</div>

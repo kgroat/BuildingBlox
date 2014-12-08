@@ -4,31 +4,35 @@
 require('templates');
 
 var app = angular.module('BuildingBlox.Directives', ['BuildingBlox.Directives.Templates', require('./helpers')])
-    .provider('AngularBloxDirectives', function () {
+    .provider('BuildingBloxDirectives', function () {
         'use strict';
         var baseOptions = {
-                backbone: false
+                bootstrap: false
             },
             getValue = function (options, name) {
-                return options[name] !== undefined ? options[name] : baseOptions[name];
+                return options.hasOwnProperty(name) ? options[name] : baseOptions[name];
+            },
+            setValue = function (options, name) {
+                baseOptions[name] = getValue(options, name);
             };
 
-        function AngularBloxDirectivesOptions(options) {
-            this.backbone = options.backbone;
+        function BuildingBloxDirectivesOptions(options) {
+            this.bootstrap = options.bootstrap;
         }
 
         this.init = function (options) {
-            baseOptions.backbone = getValue(options, 'backbone');
+            setValue(options, 'bootstrap');
         };
 
         this.$get = [function () {
-            return new AngularBloxDirectivesOptions(baseOptions);
+            return new BuildingBloxDirectivesOptions(baseOptions);
         }];
     });
 
 var exports = app;
 module.exports = app;
 
+require('./directives/abbList.js');
 require('./directives/dragArea.js');
 require('./directives/draggable.js');
 require('./directives/draggableList.js');

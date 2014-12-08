@@ -2,7 +2,7 @@
 /*jslint browser: true*/
 
 var interact = window.interact;
-var app = require('../angular.blox.directives.js');
+var app = require('../buildingBlox.directives.js');
 app.directive('dragArea', [function () {
     'use strict';
     return {

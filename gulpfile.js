@@ -15,7 +15,8 @@ var sourcemaps  = require('gulp-sourcemaps');
 var prod = false;
 var paths = {
     templatesFilename: 'templates.js',
-    mainFilename: 'angular.blox.directives.js',
+    mainFilename: 'buildingBlox.directives.js',
+    cssFilename: 'buildingBlox.css',
     tmp: './src/tmp',
     dist: './dist',
     templates: './src/templates/*.html',
@@ -39,6 +40,9 @@ var paths = {
     },
     getMinDestination: function () {
         return this.dist + '/' + this.getMinFilename();
+    },
+    getCssDestination: function () {
+        return this.dist + '/' + this.cssFilename;
     }
 };
 
@@ -47,7 +51,7 @@ gulp.task('clean-tmp', function (cb) {
 });
 
 gulp.task('clean-dist', function (cb) {
-    del([paths.getDestination(), paths.getMinDestination()], cb);
+    del([paths.getDestination(), paths.getMinDestination(), paths.getCssDestination()], cb);
 });
 
 gulp.task('clean', ['clean-tmp', 'clean-dist']);
@@ -88,11 +92,9 @@ gulp.task('browserify', ['html2js'], function () {
 
 gulp.task('css', function () {
     gulp.src('./src/scss/index.scss')
-        .pipe(sourcemaps.init())
         .pipe(sass())
-        .pipe(sourcemaps.write())
-        .pipe(rename("angular.blox.css"))
-        .pipe(gulp.dest('./dist'));
+        .pipe(rename(paths.cssFilename))
+        .pipe(gulp.dest(paths.dist));
 });
 
 gulp.task('watch', function () {

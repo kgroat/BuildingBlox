@@ -1,7 +1,7 @@
 /*global angular, require, module*/
 /*jslint browser: true*/
 
-var interact = window.interact;
+var interact = require('interact.js');
 var app = require('../buildingBlox.directives.js');
 app.directive('dropArea', [function () {
     'use strict';
@@ -17,8 +17,9 @@ app.directive('dropArea', [function () {
                 interactible;
             interactible = interact(htmlElement);
             interactible.dropzone({
-                accepts: '.draggable',
-                dragenter: function () {
+                accept: '.draggable',
+                overlap: 'pointer',
+                ondragenter: function () {
                     if (!scope.onDragEnter) {
                         return;
                     }
@@ -27,7 +28,7 @@ app.directive('dropArea', [function () {
                         scope.onDragEnter.apply(scope, args);
                     });
                 },
-                dragleave: function () {
+                ondragleave: function () {
                     if (!scope.onDragLeave) {
                         return;
                     }
@@ -36,7 +37,7 @@ app.directive('dropArea', [function () {
                         scope.onDragLeave.apply(scope, args);
                     });
                 },
-                drop:  function () {
+                ondrop:  function () {
                     if (!scope.onDrop) {
                         return;
                     }

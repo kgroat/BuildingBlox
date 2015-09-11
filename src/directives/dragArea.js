@@ -1,7 +1,7 @@
 /*global angular, require, module*/
 /*jslint browser: true*/
 
-var interact = window.interact;
+var interact = require('interact.js');
 var app = require('../buildingBlox.directives.js');
 app.directive('dragArea', [function () {
     'use strict';

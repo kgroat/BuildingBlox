@@ -2,6 +2,7 @@
 /*jslint browser: true*/
 
 require('templates');
+require('interact.js');
 
 var app = angular.module('BuildingBlox.Directives', ['BuildingBlox.Directives.Templates', require('./helpers')])
     .provider('BuildingBloxDirectives', function () {

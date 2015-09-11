@@ -14,7 +14,7 @@ app.use(require('express-markdown')({
 
 app.use('/', express.static(__dirname + '/pages'));
 app.use('/dist', express.static(__dirname + '/../dist'));
-app.use('/bower_components', express.static(__dirname + '/../bower_components'));
+app.use('/node_modules', express.static(__dirname + '/../node_modules'));
 
 http.createServer(app).listen(port, function () {
     console.log('Express server listening on port ' + port);
